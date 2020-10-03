@@ -1,0 +1,9 @@
+#SingleInstance force
+#Persistent
+SetTimer "CheckIdle", 5000
+
+CheckIdle()
+{
+	if A_TimeIdle > 60000
+	RunWait "exit_on_active.exe"
+}
