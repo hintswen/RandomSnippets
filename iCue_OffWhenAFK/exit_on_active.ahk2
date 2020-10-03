@@ -1,0 +1,13 @@
+#SingleInstance force
+#Persistent
+SetTimer "CheckIdle", 1000
+
+Gui := GuiCreate(AlwaysOnTop, Title := A_ScriptName, EventObj)
+Gui.Add("Text",, "PC Idle")
+Gui.Show
+
+CheckIdle()
+{
+	if A_TimeIdle < 1000
+	ExitApp
+}
